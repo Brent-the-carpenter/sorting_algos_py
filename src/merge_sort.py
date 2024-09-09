@@ -17,7 +17,27 @@
 
 
 def merge_sort(nums):
-
-    print("hello")
+    if len(nums) < 2:
+        return nums
+    left = merge_sort(nums[:(len(nums)//2)])
+    right = merge_sort(nums[(len(nums)//2 ):])
+    return merge(left , right)
+    
 def merge(a, b):
-    return
+    final_list = []
+    i = 0
+    j = 0
+    while len(a) >i and len(b)>j:
+        if a[i] <= b[j]:
+            final_list.append(a[i])
+            i +=1
+        else:
+            final_list.append(b[j])
+            j +=1
+    if i < len(a):
+        final_list.extend(a[i:])
+    if j < len(b):
+        final_list.extend(b[j:])
+    return final_list
+            
+# O(n*log(n))

@@ -11,7 +11,6 @@
 #       3.Decrement end by one
 #   4.Return the sorted list
 
-
 def bubble_sort(nums):
     swapping = True
     end = len(nums)-1
@@ -23,3 +22,6 @@ def bubble_sort(nums):
                 swapping = True
         end -=1
     return nums
+
+## O(n^2)
+

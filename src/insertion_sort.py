@@ -8,6 +8,12 @@
 # Return the list
 
 
-def insertion_sort():
-    print("hello")
-    return  
+def insertion_sort(nums):
+    for num in range(len(nums)):
+        j = num
+        while j > 0 and nums[j-1] >= nums[j] :
+            nums[j] , nums[j-1] = nums[j-1] , nums[j]
+            j -=1 
+    return nums 
+
+#O(n^2)
